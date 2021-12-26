@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 자바스크립트는 대입이라는 개념이 없다.
+      // 모든 변수는 참조변수가 된다.
+      // var n = new Boolean(true); 박싱을 통해 참조하게 된다.
+      // var n = new Number(3); //매핑 클래스를 이용하여 박싱을 직접해야함..
+      // var s = new String("hello");
+      // var ar = new Array();
+      // var ob = new Object();
+
+      // JSON :
+      // 자바스크립트가 가지고있는 오브젝트를
+      // 쉽게 표현할수있도록 하는 표기법
+      // var n = true;
+      // var n = 3;  = 내부적으로는 new Number(3)
+      // var s = "hello" = 내부적으로 new String("Hello");
+      // 자바스크립트는 문자와 문자열을 구분하지 않는다
+      // 다 문자열이다..
+      // 왜많은사람들이 싱글을 쓸까?
+      // html 문서내에 포함될때 그 문자서 "" 안쪽에 스크립트 포함될수도 있고
+      // 범위를 표현하는 더블컨테이션을 싱글을 쓰는경우가 많아서 습관적으로
+      // 충돌을 피하려고 '' 로 쉽게 표현하려는 사람이 많다.
+
+      // 주석 ctrl + /
+      // 한행 삭제 ctrl + x
+      // var exam = new Object(); // 1. 오브젝트 만드는 법
+      // exam.kor = 30;
+      // exam.eng = 70;
+      // exam.math = 80;
+      var exam = {}; // 2. 오브젝트 만드는 법
+      var exam = { kor: 30, eng: 70, math: 80 };
+      var ar = [3, 4, 5, 6, exam, [7, 8, 9]]; // 배열에 배열을 포함
+
+      console.log(exam.kor + exam.eng);
+      console.log(ar[5][1]); // 8뽑기
+      console.log(ar[4].math); // exam이 가지고있는 math값 뽑기
+
+      // 중첩된 데이터의 구조도 쉽게 표현할 수 있다.
+      // json
+      var notices = [
+        { id: 1, title: "hello json" },
+        { id: 2, title: "hi json" },
+        { id: 3, title: "json is..." },
+      ];
+      // XML : 중첩이 많고 일반적으로 쓸수있는게
+      // 태그를 제너럴 하게 쓸수있는 방식
+      // 태그 기법을 이용
+      <notice>
+        <notice id="1" title="hello json" />
+        <notice id="2" title="hi json" />
+        <notice id="2" title="title" />
+      </notice>;
+
+      // json
+      var notice = { id: 1, title: "hello" }; // json으로 표현된 객체가 변수에 담아서 변수로 꺼내옴
+      console.log(notice.title);
+
+      // 외부에서 넘겨받은 파일은
+      var notice = '{"id":1 , "title":"hello"}'; // json으로 표현된 객체가 변수에 담아서 변수로 꺼내옴
+      // 현재 문자열... 담는건 객체가 아니라 문자다..
+      // . 찍어도 안됨..
+
+      // 문자열로 넘겨받은것들을 어떻게 객체로 넘길수있을까 ?
+      // 문자열로 왔는데 그형식이 json 맞으면 그것을 객체화 하는 방법 : eval()
+    </script>
+  </body>
+</html>

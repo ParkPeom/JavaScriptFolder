@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // JSON parser : json 문법에 맞게 문자가 전달되면 자바스크립트 데이터 객체로 바꿔준다.
+      var data = { id: 1, title: "aaa" };
+      // id , title 컬럼 키 인데 ""문자열로 안해도 된다.
+      console.log(data.title); // aaa 출력됨
+
+      var data = { id: 1, title: "aaa" };
+      // "title" 써야할떄 컬럼으로 오는값 유효하지 않는 변수객체 일때
+
+      var data = { "n id ": 1, title: "aaa" };
+
+      console.log(data["n id"]); //
+
+      // object를 json 으로 표현할때는
+      var data = { id: 1, title: "aaa" }; // 를많이쓰인다.
+
+      var data = JSON.parse('{"id":1, "title":"aaa"}');
+      // json 규칙에 맞으면 변수에 객체로 만들어줌
+      // parse 로 사용할때는 반드시 json 규칙에 맞게 키값을 문자열 형태로 "" 해야한다.
+      // "" 중요
+      console.log(data.id);
+
+      var data2 = { id: 2, title: "bbb" };
+      // 우리끼리표현은 ""를 안쓰게됨..
+      var json = JSON.stringify(data2); // json 의 data2가 문자열로 바뀜
+      alert(json);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 많은수의 매개변수를 전달하면?
+      // var sum = add(2,3,"hello",3,4,5,6,7,87);
+
+      function add(x, y) {
+        arguments; // 넘겨지는것들을 차곡차곡받음
+        //가변적으로 수집한다.
+        //alert(arguments.length); // 넘겨지는값 개수
+        alert(arguments[5]); // 넘겨지는값 원하는 6번째 인자 뽑아낸다.
+        alert(typeof arguments[5]); // number
+        return x + y;
+      }
+      document.write(add(6, 4, "hello", 3, 4, 5, 6, 7, 87));
+      // 에러가 나지 않는다.
+      // 자바스크립트는 매개변수는 의미가없다
+      // 값을 받는 그릇역할하지않고 데이터가 객체기떄문에 참조하는이름이기 때문
+      // 참조하는 녀석으로 x,y가 있고 넘겨지는값들은 가변으로 받을수있는 컬렉션으로 되어있다.
+    </script>
+  </body>
+</html>

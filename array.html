@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var nums = new Array(); // 객체 생성
+      nums.push(3);
+      nums.push(12);
+      nums.push(56);
+      console.log(nums); // 브라우저가 제공하는 콘솔창
+      var n1 = nums[1];
+      console.log("n1 :" + n1 + ", nums :  " + nums); // 브라우저가 제공하는 콘솔창
+
+      n1 = nums.pop(); // 맨위를 꺼낸다
+
+      console.log("n1:" + n1 + ", nums : " + nums); // 브라우저가 제공하는 콘솔창
+
+      var nums2 = new Array();
+      nums2[3] = 57;
+
+      console.log(nums2); // empty x 3 (앞에 3칸 비어있음 ,   length : 4
+    </script>
+  </body>
+</html>

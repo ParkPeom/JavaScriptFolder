@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // eval() 함수 - 파싱할수있는 방법
+      // JSON : 모든 데이터를 포장할수있는 포멧
+      // ex) 공공데이터 형식도 JSON 으로 받을수 있다.
+      // 한칸뛰고 역슬래쉬 : 하나의 문자열로 먹히게된다.
+      var data =
+        '[ \
+                    {"co":0.3,"so2":0.003,"o3":0.027,"no2":0.009,"pm10":23,"msrdt_de":"20211225","pm25":12,"msrste_nm":"강남구"}, \
+                    {"co":0.7,"so2":0.003,"o3":0.023,"no2":0.015,"pm10":26,"msrdt_de":"20211225","pm25":12,"msrste_nm":"강남대로"}, \
+                    {"co":0.3,"so2":0.002,"o3":0.021,"no2":0.011,"pm10":30,"msrdt_de":"20211225","pm25":16,"msrste_nm":"강동구"}, \
+                ]'; // 문자열일뿐임..
+      console.log(data[0].co); // undifined
+      // 문자열이 아닌 데이터로 어떻게 쓸까 ?
+      // eval(이발) 이라는 함수가 있다.
+      var x = 30;
+      console.log(x);
+
+      ("var x = 30"); //그냥 문자열 값이라 출력못함..
+      console.log(x);
+      eval("var x = 30;"); // 문자열값을 호출가능..ㄷㄷ 엄청난 기능이다
+      console.log(x);
+
+      // 위 데이터를 eval로 가져오면 ?
+      eval("var ar = " + data + ";");
+      // 실행한다음 담을 그릇
+      // 문자열겨함된후 + ; 전체가 실행되면
+      // ar를 이용하여
+      console.log(ar[0].co); // 0.3
+      // 파싱하려면 이발(eval) 자바스크립트코드로 넘겨받아서 쓸수있다.
+      // json 파싱하는데 쓸수있다.
+    </script>
+  </body>
+</html>

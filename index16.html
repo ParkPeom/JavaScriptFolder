@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 변수의 가시영역 과 전역변수
+      // 스크립트의 유연성과 자율성..
+      alert(a); // undifined : a가 정의되지 않아서.
+      var a = 1;
+      // 과연 상황자체가 a가 나올까 ?
+      // undifined 가 나오게 된다..
+      // 자바스크립트에서 a는 변수선언은 됬지만
+      // 값을 할당하지않음.. 순서에 상관없이 지역 자체가 실행되기 위해서는
+      // 지역내에 선언(준비물)되고 있는것들은 올라갔는데
+      // 어디에 선언되있든 값이 할당되지 않아서 undifined
+      // var는 변수선언을 의미하지만 선언하지않고 1를 할당하면?
+
+      a = 1; // ★ a 전역 객체 속성으로 붙음 ★
+      alert(a); // a전역객체의 속성이 나옴
+
+      //alert(b); // undifined
+      //b = 1;
+      var f1 = function () {
+        a = 1; // 전역변수
+        var a = 3; // 지역변수
+        a++; // 어떤 a? 지역변수가 우선순위가 높아서 지역변수가++됨
+        alert(a);
+      };
+      var a = 1;
+      var a = 2; // 또 선언 가능 에러안남
+      alert(a); // 2
+
+      {
+        // 중괄호
+        var a = 1; // 중괄호 밖에서 사용가능
+        //중괄호 쓰나 마나임 ㅎ
+      }
+
+      // 자바스크립트 지역변수 지역으로 사용하는 괄호는
+      // function f1() { } 밖에 없다
+
+      function f1() {
+        // 생명선
+        var a = 1;
+      }
+
+      f1(); // 함수가 실행됨 지역변수가 미리
+      // 흐름이 끝나면 사라짐
+      alert(a); // a전역객체의 값을 활용
+
+      alert(a); // 선언된 녀석이 지역화되서 오류
+
+      // 뒤에 호출했을때
+      function f1() {
+        a = 1; //이면 ?
+      }
+      f1(); // 오류남 왜) 전역변수가 만들어져도 호출을 뒤에서 했으므로
+      // 뒤에서 호출하기전까지 전역변수가 없는거다..
+
+      function f1() {
+        a = 1; // 전역변수
+      }
+
+      function f2() {
+        alert(a);
+      }
+      f1(); // 문제없다 1
+      f2(); // 문제없다 1
+
+      function f1() {
+        var a = 1; // 지역 변수
+      }
+
+      function f2() {
+        alert(a); // 에러 전역변수를 호출시키려고함
+      }
+      f1(); // 문제없다 1
+      f2(); // 에러가 생김 전역변수를 호출시킴
+
+      function f1() {
+        var a = 1;
+        f2(); // 함수안에 함수 정의 가능
+        function f2() {
+          var a = 2;
+          f3(); // 지역변수 3 가져오는데 a = 3 전역변수라면
+          function f3() {
+            var a = 3; // a = 3 이면
+            // 사용할수있는 a는 위에 있는 a다
+            // 바깥을 쓰게됨
+          }
+        }
+      }
+      f1();
+      alert(a);
+    </script>
+  </body>
+</html>

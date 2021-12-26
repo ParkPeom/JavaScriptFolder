@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var ar = ["hello", "hi", "greeting"];
+
+      for (var i = 0; i < ar.length; i++) {
+        // ar.length = ar 개수
+        document.write(ar[i] + "<br />"); // ar[i] 출력
+      }
+      // for in 문 으로 쓰기
+      // ar이 가지고 있는 값 하나를 꺼내서 d에 하나씩 담기
+      // data 가 아닌 i 인덱스로
+      // ar.length = ar 개수
+      for (var i in ar) // array로 씀
+        document.write(ar[i] + "<br />"); // 현재 인덱스로 값을 꺼냄
+
+      var ob = { id: 1, title: "hello", writeId: "newlec" };
+
+      // 값을 하나하나 순회하기 가 힘듬
+      for (var i in ob) {
+        // 오브젝트로 쓰면 ?
+        document.write(ob[i] + "<br /");
+      }
+      // for in 문은 arr 와 object를 꺼낼떄 값을 순회할수있도록 하는 방법이 다름
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 산술연산자 , 비교연산자 , 관계연산자
+      // === , !==
+      var x = 3; // 대입이 아니라 참조
+      // 박스에 대한 이름 x
+      // x는 곧 객체를 의미
+      var y = 3; // 3이라는 박스가 되고
+      // 새로운 박스가 만들어짐
+
+      // 값이 같은지 비교연산 과
+      // 박스가 같은지 비교연산
+
+      console.log(); // 개발자 도구
+      alert(); // 대화상자의 띄어서 출력
+      document.write(); // 웹 홈페이지 문서에 출력
+      document.write(x == y); // 값을 비교
+      document.write(x === y); // (박스같은지)주소를 비교 참이나옴
+
+      // 다른박스를 만들고싶으면 ?
+      var y = new Number(3);
+      document.write(x === y); // false 박스가다름
+
+      document.write(3.5 - "2"); // 1.5 빼기에서 문자열이 실수가 됨..
+      document.write(3 - "2"); // 1  빼기에서 문자열이 정수가 됨..
+
+      // 5 < 3 + 4
+      document.write(5 < 3 + 4); // true
+      document.write("32" > "4"); // false
+      document.write(32 > "4"); // false
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var x = new Number(3);
+      var y = 4;
+      var z; // undefined : 참조 하는 객체가 정해지지 않았다.
+      // 객체를 할당하지 않은 상태
+      z = 3; // 할당해주면 된다.
+
+      alert(typeof z); // number
+
+      var x;
+      alert(x == "undefined"); // true ? false ? false.
+      // undefined 특수한 값
+      alert(x == undefined); // true
+      // var 굉장한 유연성을 가지고 있다.
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트</title>
+
+    <script>
+      window.onload = function () {
+        btnPrint = document.getElementById("btn-print");
+
+        var add = function (x, y) {
+          return x + y;
+        };
+        // 함수에 바로 대입할수있다. 굳이 함수명이 필요없다
+        // 대입하기 위한 이름만 필요하니까
+        btnPrint.onclick = function () {
+          // var btnPrint = document.getElementById("btn-print");
+          var x = prompt("x값을 입력하세요", 0);
+          var y = prompt("y값을 입력하세요", 0);
+          x = parseInt(x);
+          y = parseInt(y);
+          btnPrint.value = x + y;
+        };
+      };
+      alert(add);
+      // window.onload = init; 굳이 할필요가 없다.
+    </script>
+  </head>
+  <body>
+    <!--밑에선 웬만해선 스크립트 코드가 안적히게 -->
+    <input type="button" value="클릭" id="btn-print" /><br />
+    <!--onclick="printResult();" -- />
+        빼버린다. 위에 따로 만듬 -->
+    <span id="span1">스팬입니다.</span>
+  </body>
+</html>

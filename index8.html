@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 프로토타입 : 객체를 만들고나서 정의한다.
+      // 동적인 객체 정의
+      // C++ , C# 정적인 객체 정의
+
+      var exam = new Object(); //맨땅의 객체만듬
+      // 그냥 객체 만들고 . 으로 만들어진다.
+      // expand object 라고 한다.
+      exam.kor = 30;
+      exam.eng = 70;
+      exam.math = 80;
+
+      alert(exam.kor + exam.eng);
+
+      exam.kor = 20;
+      // KOR해도 유연성땜에.. 오타난걸 모른다..
+      alert(exam.kor + exam.eng); //
+
+      var exam2 = new Object();
+
+      // [값=문자열] exam2 가 가지고있는걸
+      // 변수라는걸로 꺼내고싶을때
+      exam2["kor"] = 30;
+      exam2["eng"] = 70;
+      exam2["math"] = 80;
+      alert(exam2["kor"]);
+
+      // 선형(list형) : 데이터를 직선으로 관리
+      // map형(hash형) : 데이터를 구분해주는 컬럼명(식별자)
+      // 자바스크립트는 map형을 지원해 준다. -> object
+    </script>
+  </body>
+</html>

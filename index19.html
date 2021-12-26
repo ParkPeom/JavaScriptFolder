@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="클릭" onclick="alert('안녕하세요!');" /><br />
+    <span onclick="alert('hello');">스팬입니다.</span>
+
+    <script>
+      // 페이지가 읽혀 질때 실행
+      function printResult() {
+          var x,y;
+          x = prompt("x 값을 입력하세요",0);
+          y = prompt("y 값을 입력하세요",0);          
+          x = parseInt(x);
+          y = parseInt(y);
+          alert(x + y);
+        }  
+    </script>
+    <!--클릭하면 이벤트 발생 -->
+    <input type="button" value="클릭" onclick="printResult();"/><br />
+    <span onclick
+
+    <!--이벤트 핸드럴 사용자로인해 발생-->
+    <!--이벤트가 발생할때 실행-->
+    <!--
+  <input onclick=""/> <!--마우스를 눌렀다 땔때 이벤트가 발생 -->
+    <!--실행할 코드를 ""에 적는다 -->
+    <!-- <input onmouseover=" " /><!--버튼위에 올라갔을경우-->
+
+    <!--<input type="button" value="출력" onclick="alert('안내 메시지');" /> -->
+  </body>
+</html>

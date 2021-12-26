@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 클로저 : 함수를 객체로 만들어서 그 자체가 반환되고 함수안에 함수가 만들어지고
+      // 함수가 가지는 지역변수 문제가 클로저 문제를 맡게됨
+
+      function f1() {
+        var a = 1; // 지역변수 (함수안에서만 사용하는 지역변수)
+
+        return a;
+      }
+
+      var a = f1();
+      alert(a);
+
+      // 클로저
+      // https://hanamon.kr/javascript-%ED%81%B4%EB%A1%9C%EC%A0%80/
+
+      function f1() {
+        var a = 1; // 지역 함수 (죽지않고 끝가지 살아남음)
+        // 밑에 a때문에
+        // 함수안에 함수
+
+        // f1()를 호출해서 반환받은 결과가
+        // 함수 객체이다..
+        return function f2() {
+          // var f 에 참조되고 있는상태
+          // 위에 var a를 닫을수있게 하는것이 클로저..
+          // 클로저 : 자원이 계속해서 묶이게됨..
+          // 자기가 알고묶는거랑 모르고 묶는거랑 다르다..
+          // 클로저를 일부러 만들수도 있음..
+
+          return a;
+        };
+      }
+      var f = f1(); // f가 함수이름..
+      var a = f(); // 함수호출은 반환받았던 f2를 의미
+      // a값을 받으니 f2가받았던 변수가 아니라
+      // 위에 있는 값 즉 전역변수 위의 지역변수를 참조함
+
+      // f1()이라는 함수를 닫아도 그대로 자원을 묶어둠
+      // 안쪽에서 쓰고있는 a가 사용할수있게 f1()이 자원을 못닫음
+      // f라는 녀석이 참조하지 않는 상태 다른값으로 대치되지 않는상태 놓여지지 않음
+      //
+      alert(a);
+    </script>
+  </body>
+</html>

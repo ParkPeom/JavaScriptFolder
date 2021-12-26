@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트</title>
+
+    <script>
+      var btnPrint = null; // 전역변수는 바람직한 방법이 아니다.
+
+      function init() {
+        var btnPrint = document.getElementById("btn-print");
+        btnPrint.onclick = printResult; // 함수를 대입할때는 함수가 참조하고있는 객체를 대입
+      }
+      // 위에 적으면 안됨.. btnPrint. 할때 메모리상에 없기때문에
+      // function printResult() { } 흝으면서 과정에서 코딩을 읽어야 메모리에 잡힌다.
+
+      window.onload = init; // window한테 부탁 onload 하면 init 호출
+      // () 는 함수를 호출하게됨 그결과를 대입하게됨
+    </script>
+  </head>
+  <body>
+    <!--밑에선 웬만해선 스크립트 코드가 안적히게 -->
+    <input type="button" value="클릭" id="btn-print" /><br />
+    <!--onclick="printResult();" -- />
+        빼버린다. 위에 따로 만듬 -->
+    <span id="span1">스팬입니다.</span>
+  </body>
+</html>
