@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+	<h1>DOM(Document Object Model) - Element 객체</h1>
+	<hr>
+	<p>노드(Node) - 태그(Tag Node)와 태그내용(Text Node)을 표현하는 객체</p>
+	<p>엘리먼트(Element) - 태그(Tag Node)만을 표현하는 객체</p>
+	<hr>
+	<h2 id="h2">h2 태그의 내용</h2>
+	<ul>
+		<li>li 태그의 내용-1</li>
+		<li>li 태그의 내용-2</li>
+		<li>li 태그의 내용-3</li>
+	</ul>
+	
+	<script type="text/javascript">
+		//document.getElementById(id) : 태그의 id 속성값으로 태그를 검색하여 Element 객체로 
+		//반환하는 메소드 - 태그 하나만 검색하여 Element 객체로 반환
+		// => document 객체 대신 Element 객체를 이용하여 태그 검색 가능 
+		var h2E=document.getElementById("h2");
+		//alert(h2E);//[object HTMLHeadingElement]
+		
+		//Node.nodeName : Node(Element) 객체의 노드명(태그명)을 저장한 프로퍼티
+		//alert(h2E.nodeName);//H2
+		
+		//Node.nodeValue : Node(Element) 객체의 노드값(태그내용)을 저장한 프로퍼티
+		//alert(h2E.nodeValue);//null
+		
+		//Node.firstChild : Node(Element) 객체의 첫번째 자식 객체(Node 객체)를 저장한 프로퍼티 
+		//alert(h2E.firstChild.nodeName);//#text
+
+		alert(h2E.firstChild.nodeValue);//h2 태그의 내용
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

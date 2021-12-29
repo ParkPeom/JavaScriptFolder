@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+	<h1>BOM(Browser Object Model) - document 객체</h1>
+	<hr>
+	<p>document 객체 : 요청 웹문서(웹프로그램)의 응답 결과를 출력하는 영역을 객체로 표현하여 프로퍼티와 메소드 제공</p>
+	
+	<script type="text/javascript">
+		//응답 결과를 출력하는 영역에서는 박스모델(태그)을 document 객체의 하위 객체(Element 객체)로
+		//표현하여 처리 - DOM(Doucment Object Model)
+		// => 이벤트가 발생될 경우 Element 객체를 조작하여 동적인 페이지 제공 - DHTML(Dynamic HTML) 
+		//alert(document);//[object HTMLDocument]
+		
+		//document.write(html) : HTML 태그를 전달받아 응답 영역에 출력하는 메소드 
+		document.write("<p>document.write 메소드에 의해 출력되는 내용입니다.</p>");
+	</script>
+</body>
+</html>
